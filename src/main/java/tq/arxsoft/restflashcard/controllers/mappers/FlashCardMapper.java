@@ -9,4 +9,5 @@ import tq.arxsoft.restflashcard.entities.FlashCardEntity;
 @Mapper(componentModel = "spring")
 public interface FlashCardMapper {
     FlashCardEntity flashCardToEntity(FlashCardDto flashCardDto);
+    FlashCardDto flashCardToDto( FlashCardEntity flashCardEntity);
 }
