@@ -3,6 +3,7 @@ package tq.arxsoft.restflashcard.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
@@ -17,7 +18,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private long id;
 
     private String name;
 
@@ -30,6 +31,8 @@ public class UserEntity {
 
     List<LessonEntity> lessons;
 
-    private Long lastLessonId;
+    @Column(nullable = false)
+    @ColumnDefault("0")
+    private long lastLessonId;
 
 }

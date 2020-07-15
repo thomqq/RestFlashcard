@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tq.arxsoft.restflashcard.controllers.dtos.FlashCardDto;
 import tq.arxsoft.restflashcard.controllers.mappers.FlashCardMapper;
-import tq.arxsoft.restflashcard.controllers.repositories.FlashCardRepo;
+import tq.arxsoft.restflashcard.repositories.FlashCardRepo;
 import tq.arxsoft.restflashcard.entities.FlashCardEntity;
 import tq.arxsoft.restflashcard.integration.gateway.FlashCardGateway;
 

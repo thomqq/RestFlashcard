@@ -1,4 +1,4 @@
-package tq.arxsoft.restflashcard.controllers.repositories;
+package tq.arxsoft.restflashcard.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import tq.arxsoft.restflashcard.entities.LessonEntity;

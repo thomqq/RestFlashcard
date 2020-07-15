@@ -2,6 +2,7 @@ package tq.arxsoft.restflashcard.controllers.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import tq.arxsoft.restflashcard.controllers.dtos.FlashCardDto;
 import tq.arxsoft.restflashcard.entities.FlashCardEntity;

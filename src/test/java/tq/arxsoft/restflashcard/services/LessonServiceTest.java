@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.TestPropertySource;
-import tq.arxsoft.restflashcard.controllers.repositories.LessonRepo;
-import tq.arxsoft.restflashcard.controllers.repositories.UserRepo;
+import tq.arxsoft.restflashcard.repositories.LessonRepo;
+import tq.arxsoft.restflashcard.repositories.UserRepo;
 import tq.arxsoft.restflashcard.entities.LessonEntity;
-import tq.arxsoft.restflashcard.entities.UserEntity;
 
 import java.util.List;
 
@@ -31,5 +30,15 @@ class LessonServiceTest {
         List<LessonEntity> lessons = lessonService.getAllLessonForUserName("thomqq");
         //then
         assertEquals(false, lessons.isEmpty());
+    }
+
+    @Test
+    void get_last_lesson_for_user_or_null() {
+        //given
+        LessonService lessonService = new LessonService(lessonRepo, userRepo);
+        //when
+        LessonEntity lessonEntity = lessonService.getLastLessonOrNullForUserName("thomqq");
+        //then
+        assertNotNull(lessonEntity);
     }
 }

@@ -9,6 +9,6 @@ insert into lessons_flash_cards ( lesson_entity_id, flash_cards_id) values (1, 1
 insert into lessons_flash_cards ( lesson_entity_id, flash_cards_id) values (1, 2);
 insert into lessons_flash_cards ( lesson_entity_id, flash_cards_id) values (1, 3);
 
-insert into users (id, name) values (1, 'thomqq');
+insert into users (id, name, last_lesson_id) values (1, 'thomqq', 1);
 
 insert into users_lessons (user_id, lesson_id) values (1, 1)
