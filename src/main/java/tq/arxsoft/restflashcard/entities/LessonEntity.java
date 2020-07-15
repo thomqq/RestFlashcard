@@ -3,26 +3,24 @@ package tq.arxsoft.restflashcard.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CollectionType;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "flashcards")
-public class FlashCardEntity {
-
+@Table( name = "lessons")
+public class LessonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(nullable = false)
-    private String question;
+    @Column(nullable = true, unique = true)
+    private String name;
 
-    @Column(nullable = false)
-    private String answer;
-
+    @ManyToMany
+    private List<FlashCardEntity> flashCards;
 }

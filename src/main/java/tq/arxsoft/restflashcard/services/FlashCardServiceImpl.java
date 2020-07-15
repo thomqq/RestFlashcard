@@ -32,6 +32,5 @@ public class FlashCardServiceImpl implements FlashCardService {
         FlashCardDto flashCardDto = flashCardMapper.flashCardToDto(flashCardEntity);
         gateway.addFlashCard(flashCardDto);
         flashCardRepo.save(flashCardEntity);
-
     }
 }
