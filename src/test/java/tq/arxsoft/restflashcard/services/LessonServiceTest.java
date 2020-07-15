@@ -5,8 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.TestPropertySource;
 import tq.arxsoft.restflashcard.controllers.repositories.LessonRepo;
+import tq.arxsoft.restflashcard.controllers.repositories.UserRepo;
 import tq.arxsoft.restflashcard.entities.LessonEntity;
-import tq.arxsoft.restflashcard.model.User;
+import tq.arxsoft.restflashcard.entities.UserEntity;
 
 import java.util.List;
 
@@ -19,13 +20,15 @@ class LessonServiceTest {
     @Autowired
     LessonRepo lessonRepo;
 
+    @Autowired
+    UserRepo userRepo;
+
     @Test
     void get_all_lesson_for_user() {
         //given
-        User user = new User("thomqq");
-        LessonService lessonService = new LessonService(lessonRepo);
+        LessonService lessonService = new LessonService(lessonRepo, userRepo);
         //when
-        List<LessonEntity> lessons = lessonService.getAllLesson(user);
+        List<LessonEntity> lessons = lessonService.getAllLessonForUserName("thomqq");
         //then
         assertEquals(false, lessons.isEmpty());
     }

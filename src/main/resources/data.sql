@@ -1,4 +1,3 @@
--- not empty
 insert into flashcards (id, question, answer) values (1, 'q1', 'a1');
 insert into flashcards (id, question, answer) values (2, 'q2', 'a2');
 insert into flashcards (id, question, answer) values (3, 'q3', 'a3');
