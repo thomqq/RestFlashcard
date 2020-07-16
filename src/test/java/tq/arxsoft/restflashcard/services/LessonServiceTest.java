@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.TestPropertySource;
-import tq.arxsoft.restflashcard.entities.FlashCardEntity;
 import tq.arxsoft.restflashcard.model.FlashCard;
 import tq.arxsoft.restflashcard.repositories.FlashCardRepo;
 import tq.arxsoft.restflashcard.repositories.LessonRepo;
@@ -33,7 +32,7 @@ class LessonServiceTest {
 
     @BeforeEach
     void init() {
-        lessonService = new LessonService(lessonRepo, userRepo,flashCardRepo );
+        lessonService = new LessonServiceImpl(lessonRepo, userRepo,flashCardRepo );
     }
 
     @Test
