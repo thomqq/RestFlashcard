@@ -3,7 +3,6 @@ package tq.arxsoft.restflashcard.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CollectionType;
 
 import javax.persistence.*;
 
@@ -17,7 +16,7 @@ public class FlashCardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private long id;
 
     @Column(nullable = false)
     private String question;

@@ -27,7 +27,7 @@ public class LessonService {
     }
 
     public LessonEntity getLastLessonOrNullForUserName(String userName) {
-        UserEntity userEntity = userRepo.findByName(userName).orElse(null);;
+        UserEntity userEntity = userRepo.findByName(userName).orElse(null);
         if( userEntity == null || userEntity.getLastLessonId() < 1 ) {
             return null;
         }

@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FlashCardDto {
+    private long id;
     private String question;
     private String answer;
 }

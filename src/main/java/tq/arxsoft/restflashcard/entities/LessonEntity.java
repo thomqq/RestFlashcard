@@ -18,7 +18,7 @@ public class LessonEntity {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(nullable = true, unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @ManyToMany

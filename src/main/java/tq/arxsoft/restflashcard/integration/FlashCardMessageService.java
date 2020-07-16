@@ -1,7 +1,6 @@
 package tq.arxsoft.restflashcard.integration;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.MessageEndpoint;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.annotation.Transformer;
@@ -25,7 +24,7 @@ public class FlashCardMessageService {
     @Transformer(inputChannel = "flashcard", outputChannel = "flashcard")
     public GenericTransformer< FlashCardDto, FlashCardDto> someTransform() {
 
-        return card -> { return new FlashCardDto("TQ: " + card.getQuestion(), "TQ: " + card.getAnswer()); };
+        return card -> new FlashCardDto(card.getId(), "TQ: " + card.getQuestion(), "TQ: " + card.getAnswer());
     }
 
 }

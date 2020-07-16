@@ -29,7 +29,7 @@ class LessonServiceTest {
         //when
         List<LessonEntity> lessons = lessonService.getAllLessonForUserName("thomqq");
         //then
-        assertEquals(false, lessons.isEmpty());
+        assertFalse(lessons.isEmpty());
     }
 
     @Test

@@ -1,6 +1,5 @@
 package tq.arxsoft.restflashcard.controllers.rest;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +15,6 @@ import tq.arxsoft.restflashcard.services.FlashCardService;
 public class FlashCardRestEndPoint {
 
     private FlashCardService flashCardService;
-
     private FlashCardMapper flashCardMapper;
 
     @Autowired
