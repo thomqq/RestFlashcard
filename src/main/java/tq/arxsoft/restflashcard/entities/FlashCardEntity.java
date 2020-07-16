@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -24,4 +25,14 @@ public class FlashCardEntity {
     @Column(nullable = false)
     private String answer;
 
+    private Date timestamp;
+
+    private Long rightAnswers;
+    private Long wrongAnswers;
+
+    public FlashCardEntity(int id, String question, String answer) {
+        this.timestamp = new Date(new java.util.Date().getTime());
+        this.rightAnswers = 0l;
+        this.wrongAnswers = 0l;
+    }
 }

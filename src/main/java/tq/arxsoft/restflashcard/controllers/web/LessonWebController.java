@@ -45,16 +45,23 @@ public class LessonWebController {
         FlashCard flashCard = flashCardMapper.flashCardEntityToFlasCard(flashCardEntity);
         flashCard.setAnswer("");
 
-        modelAndView.addObject("flashCard", lesson.getFlashCards().get(0));
+        modelAndView.addObject("flashCard", flashCard);
         //modelAndView.addObject("flashCard", new FlashCard(1, "Jaka dzisiaj jest pogoda?", "" /*""What's the weather like today?"*/));
 
         return modelAndView;
     }
 
     @RequestMapping("answer")
-    String answerPage(@ModelAttribute FlashCard flashCard) {
+    ModelAndView answerPage(@ModelAttribute FlashCard flashCard) {
+        boolean isAnswerRight = lessonService.checkAnswer(flashCard);
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("answer");
+        modelAndView.addObject("flashCard", flashCard);
+        modelAndView.addObject("good_answer", isAnswerRight);
+
         System.out.println(flashCard.getAnswer());
-        return "redirect:lessons";
+        return modelAndView;
     }
 
 }
